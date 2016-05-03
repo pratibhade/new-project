@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>DATATABLES</h1>
+<html>
+<body>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<h2> Fetching Data</h2>
+<p>{{ results }}</p>
+<tbody>
+<table border=1>
+<tr>
+    <th>Faculty Id</th>
+    <th>Faculty Name</th>
+    
+</tr>
+  {% for some in results %}
+<tr>
+        <td> {{ some.fname }} </td>
+	<td> {{ some.fid }} </td>
+</tr>
+   {% endfor %}
+</table>
+</tbody>
+</body>
+</html>
+{% endblock %}
+
