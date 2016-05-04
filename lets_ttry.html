@@ -1,0 +1,41 @@
+<html>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<head>
+    <title> Data Table</title>
+   
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="http://mrrio.github.io/jsPDF/dist/jspdf.debug.js"></script>
+    <script>
+     var results = {{ results|safe }}
+    </script>
+    <script type="text/javascript">
+  
+    function dataController($scope, $http) {
+        var datas = results;
+        }
+    </script>
+</head>
+<body ng-app>
+<h3>DATABASE<h3>
+<div id="example" ng-controller="dataController">
+<table id="tab_example" class="display nowrap" width="30%" cellspacing="3" border=1>
+    <thead>
+    <tr>
+    <th>Faculty Id</th>
+    <th>Faculty Name</th>
+    
+    </tr>
+    </thead>
+    <tbody>
+    <span ng-repeat="(fid,fname) in datas">
+    <td>{{ fid } }</td>
+    <td>{{ fname }}</td>
+    
+    </span>
+    </tbody>
+</table>       
+</div>
+</body>
+</html>
